@@ -1,0 +1,45 @@
+[managers.pacman]
+add = "pacman -S #:?"
+remove = "pacman -Rns #:?"
+sudo = true
+seperator = " "
+priority = 0
+
+[managers.cargo]
+add = "cargo install #:?"
+remove = "cargo uninstall #:?"
+update = "cargo install #:?"
+sudo = false
+seperator = " "
+priority = 20
+
+[managers.paru]
+add = "paru -S #:?"
+remove = "paru -Rns #:?"
+update = "paru"
+sudo = false
+seperator = " "
+priority = 10
+
+[packages]
+pacman = ["git", "base-devel"]
+cargo = ["cargo-nextest", "bacon"]
+paru = ["neovim", "fish", "rustup", "github-cli"]
+
+[dotty]
+
+[hooks.once]
+set_shell = "chsh -s /usr/bin/fish"
+auth_github = "gh auth login --hostname github.com --git-protocol https"
+
+[hooks.once.install_paru]
+command = """
+git clone https://aur.archlinux.org/paru.git ~/paru/
+cd ~/paru
+makepkg -si
+"""
+priority = 5
+
+[hooks.once.set_rust_toolchain]
+command = "rustup default nightly"
+priority = 15
