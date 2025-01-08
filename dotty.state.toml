@@ -1,9 +1,10 @@
-[managers.pacman]
-add = "pacman -S #:?"
-remove = "pacman -Rns #:?"
-sudo = true
+[managers.paru]
+add = "paru -S #:?"
+remove = "paru -Rns #:?"
+update = "paru"
+sudo = false
 seperator = " "
-priority = 0
+priority = 10
 
 [managers.cargo]
 add = "cargo install #:?"
@@ -13,24 +14,25 @@ sudo = false
 seperator = " "
 priority = 20
 
-[managers.paru]
-add = "paru -S #:?"
-remove = "paru -Rns #:?"
-update = "paru"
-sudo = false
+[managers.pacman]
+add = "pacman -S #:?"
+remove = "pacman -Rns #:?"
+sudo = true
 seperator = " "
-priority = 10
+priority = 0
 
 [packages]
-pacman = ["git", "base-devel"]
 cargo = ["cargo-nextest", "bacon"]
+pacman = ["git", "base-devel"]
 paru = ["neovim", "fish", "rustup", "github-cli"]
 
 [dotty]
 
 [hooks.once]
-set_shell = "chsh -s /usr/bin/fish"
 auth_github = "gh auth login --hostname github.com --git-protocol https"
+git_email = "git config --global user.email vivax3794@protonmail.com"
+set_shell = "chsh -s /usr/bin/fish"
+git_name = "git config --global user.name vivax"
 
 [hooks.once.install_paru]
 command = """

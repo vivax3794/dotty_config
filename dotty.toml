@@ -36,3 +36,5 @@ cargo = ["cargo-nextest", "bacon"]
 [hooks.once]
 set_shell = "chsh -s /usr/bin/fish"
 auth_github = "gh auth login --hostname github.com --git-protocol https"
+git_name = "git config --global user.name vivax"
+git_email = "git config --global user.email vivax3794@protonmail.com"
