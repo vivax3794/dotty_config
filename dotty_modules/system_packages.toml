@@ -1,0 +1,23 @@
+[managers.pacman]
+add = "pacman -S #:?"
+remove = "pacman -Rns #:?"
+sudo = true
+priority = 0
+
+[packages]
+pacman = ["git", "base-devel"]
+
+[hooks.once.install_paru]
+priority = 5
+command = """
+git clone https://aur.archlinux.org/paru.git ~/paru/
+cd ~/paru
+makepkg -si
+"""
+
+[managers.paru]
+add = "paru -S #:?"
+remove = "paru -Rns #:?"
+update = "paru"
+priority = 10
+

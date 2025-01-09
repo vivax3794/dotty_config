@@ -1,0 +1,15 @@
+[packages]
+paru = ["rustup"]
+cargo = ["cargo-nextest"]
+
+[managers.cargo]
+add = "cargo install #:?"
+remove = "cargo uninstall #:?"
+update = "cargo install #:?"
+priority = 20
+
+[hooks.once]
+set_rust_toolchain = {command="rustup default nightly", priority=15}
+
+[hooks.update]
+rust = {command="rustup update", priority=18}
