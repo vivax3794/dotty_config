@@ -18,10 +18,6 @@ remove = "paru -Rns #:?"
 update = "paru"
 priority = 10
 
-[hooks.once.set_rust_toolchain]
-priority = 15
-command = "rustup default nightly"
-
 [managers.cargo]
 add = "cargo install #:?"
 remove = "cargo uninstall #:?"
@@ -31,10 +27,14 @@ priority = 20
 [packages]
 pacman = ["git", "base-devel"]
 paru = ["neovim", "fish", "rustup", "github-cli"]
-cargo = ["cargo-nextest", "bacon"]
+cargo = ["cargo-nextest"]
 
 [hooks.once]
+set_rust_toolchain = {command="rustup default nightly", priority=15}
 set_shell = "chsh -s /usr/bin/fish"
 auth_github = "gh auth login --hostname github.com --git-protocol https"
 git_name = "git config --global user.name vivax"
 git_email = "git config --global user.email vivax3794@protonmail.com"
+
+[hooks.update]
+rust = {command="rustup update", priority=18}
