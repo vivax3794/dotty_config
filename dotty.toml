@@ -3,10 +3,6 @@ import = [
 	"dotty_modules/system_packages.toml",
 	"dotty_modules/git.toml",
 	"dotty_modules/rust.toml",
+	"dotty_modules/fish.toml",
+	"dotty_modules/nvim.toml"
 ]
-
-[packages]
-paru = ["neovim", "fish"]
-
-[hooks.once]
-set_shell = "chsh -s /usr/bin/fish"

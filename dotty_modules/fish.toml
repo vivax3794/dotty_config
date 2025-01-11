@@ -1,0 +1,9 @@
+[packages]
+paru = ["fish"]
+
+[files."~/.config/fish/config.fish"]
+source = "./dotfiles/config.fish"
+post_hook = "source ~/.config/fish/config.fish"
+
+[hooks.once]
+set_shell = "chsh -s /usr/bin/fish"
