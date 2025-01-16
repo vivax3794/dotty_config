@@ -13,6 +13,16 @@ vim.keymap.set("n", "<leader>h", ":noh<CR>", {silent = true})
 vim.keymap.set('n', '<Left>', ':bp<CR>', { silent = true })
 vim.keymap.set('n', '<Right>', ':bn<CR>', { silent = true })
 
+vim.keymap.set('n', 'c', '"_c', { noremap = true })
+vim.keymap.set('n', 'C', '"_C', { noremap = true })
+vim.keymap.set('n', 'cc', '"_cc', { noremap = true })
+vim.keymap.set('v', 'c', '"_c', { noremap = true })
+
+vim.keymap.set('n', 'd', '"_d', { noremap = true })
+vim.keymap.set('n', 'D', '"_D', { noremap = true })
+vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
+vim.keymap.set('v', 'd', '"_d', { noremap = true })
+
 return {
     {
         "karb94/neoscroll.nvim",

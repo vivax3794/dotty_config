@@ -11,15 +11,16 @@
 - [ ] Make change not copy to clipboard
     * Usually when I want that I use `x` then `i`/`a`/...
     * When I do `c` its is VERY often I just pasted something, need to edit it, and then I want to paste it again somewhere else, which the default behaviour fucks up.
+- [ ] Make change not copy to clipboard
 
 # Fish
 - [ ] colors
-- [ ] Prompt
-- [ ] Bluetooth connect
-- [ ] core alternatives
-    - [ ] bat
+- [X] Prompt
+- [X] Bluetooth connect
+- [X] core alternatives
+    - [X] bat
     - [X] ripgrep
-    - [ ] exa
+    - [X] exa
 
 # Kitty
 - [X] colors
@@ -35,6 +36,7 @@
 - [X] notifications
 - [X] program runner
 - [ ] Shutdown menu
+- [ ] Scratch terminal
 
 # top bar
 - [X] workspaces
