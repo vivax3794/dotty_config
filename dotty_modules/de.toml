@@ -9,10 +9,14 @@ paru = [
 	"ttf-fira-code",
     "dunst", # notifications
     "hyprpaper",
+    "qt6-wayland",
+    "xdg-desktop-portal",
+    "xdg-desktop-portal-hyprland",
+    "grim",
+    "slurp",
+    "tofi",
+    "waybar",
 ]
-
-[files."~/.config/dunst/dunstrc"]
-source = "./dotfiles/dunstrc.ini"
 
 [files."~/.config/hypr/hyprland.conf"]
 source = "./dotfiles/hyprland.conf"
@@ -21,7 +25,14 @@ post_hook = "hyprctl reload"
 [files."~/.config/hypr/hyprpaper.conf"]
 source = "./dotfiles/hyprpaper.conf"
 post_hook = "hyprctl hyprpaper reload"
-priority = 60
+
+[files]
+"~/.config/dunst/dunstrc"= "./dotfiles/dunstrc.ini"
+"~/.config/tofi/config" = "./dotfiles/tofi"
+
+[files."~/.config/waybar"]
+source = "./dotfiles/waybar"
+post_hook = "killall waybar; sleep 1; hyprctl dispatch exec waybar"
 
 [files."/etc/systemd/system/getty@tty1.service.d/override.conf"]
 source = "./dotfiles/getty.service"

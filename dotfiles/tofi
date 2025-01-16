@@ -1,0 +1,14 @@
+font = Fira Code
+font-size = 24
+prompt-color = #FF00FF
+num-results = 5
+result-spacing = 25
+width = 100%
+height = 100%
+background-color = #000C
+outline-width = 0
+border-width = 0
+padding-top = 15%
+padding-bottom = 8
+padding-left = 35%
+padding-right = 8

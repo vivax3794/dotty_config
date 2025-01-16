@@ -18,7 +18,8 @@ paru = [
 	"btop",
     "nvtop",
     "floorp",
-    "steam"
+    "steam",
+    "obs-studio",
 ]
 
 [files]

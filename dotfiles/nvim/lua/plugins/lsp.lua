@@ -1,4 +1,16 @@
-vim.cmd[[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+local function format_on_save()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+  if #clients > 0 then
+    vim.lsp.buf.format()
+  end
+end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = format_on_save,
+})
+
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 vim.diagnostic.config {

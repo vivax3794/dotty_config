@@ -41,8 +41,10 @@ abbr --add ct cargo nextest run
 abbr --add b bacon
 
 # ========= QOL ===========
+abbr --add da dotty apply
 abbr --add n nvim
 abbr --add co cd ~/coding
+abbr --add cc cd ~/dotty_config
 
 # ========= BLUETOOTH ===========
 # (the MAC address is my headset)

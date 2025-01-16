@@ -1,0 +1,72 @@
+@define-color background #1a1b26;
+@define-color foreground #c0caf5;
+@define-color selected-background #16161e;
+@define-color selected-foreground #7aa2f7;
+
+window#waybar {
+    background: transparent;
+    border: none;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @background;
+    color: @foreground;
+}
+
+.modules-left {
+    border-radius: 0 0 20px 0;
+    padding-right: 20px;
+}
+
+#workspaces button {
+    border-radius: 0;
+    padding: 4px;
+
+    font-size: 17px;
+    transition: all 0.3s ease-out;
+    color: @foreground;
+}
+
+#workspaces button.active {
+    background-color: @selected-background;
+    color: @selected-foreground;
+}
+
+.modules-center {
+    border-radius: 0 0 20px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modules-right {
+    border-radius: 0 0 0 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#clock {
+    font-size: 20px;
+}
+
+#pulseaudio-slider slider {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#pulseaudio-slider trough {
+  min-width: 200px;
+  min-height: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: @selected-background;
+}
+
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  background-color: @selected-foreground;
+  border: none;
+}
