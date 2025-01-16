@@ -44,11 +44,15 @@ abbr --add b bacon
 abbr --add n nvim
 abbr --add co cd ~/coding
 
-# ========= EXTRA FLAGS ===========
+# ========= BLUETOOTH ===========
 # (the MAC address is my headset)
 abbr --add bc bluetoothctl connect AC:80:0A:F4:0B:FC
 abbr --add bd bluetoothctl disconnect AC:80:0A:F4:0B:FC
 
+# ========= RUST PATHS ===========
 set -Ux fish_user_paths $HOME/.cargo/bin $fish_user_paths
 set -Ux fish_user_paths $HOME/.rustup/toolchains/(rustup show active-toolchain | cut -d' ' -f1)/bin $fish_user_paths
 
+# ========= CUSTOM TOOLS ===========
+# (We use alias here because we dont want to see the full file path)
+alias dotty $HOME/coding/dotty/target/release/dotty
