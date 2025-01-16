@@ -1,9 +1,8 @@
 [packages]
-paru = ["fish"]
+paru = ["fish", "bat", "ripgrep", "exa"]
 
 [files."~/.config/fish/config.fish"]
 source = "./dotfiles/config.fish"
-post_hook = "source ~/.config/fish/config.fish"
 
 [hooks.once]
 set_shell = "chsh -s /usr/bin/fish"

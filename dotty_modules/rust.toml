@@ -1,12 +1,18 @@
 [packages]
 paru = ["rustup"]
-cargo = ["cargo-nextest"]
+cargo = ["cargo-nextest", "bacon"]
+rust_component = ["rust-analyzer"]
 
 [managers.cargo]
 add = "cargo install #:?"
 remove = "cargo uninstall #:?"
 update = "cargo install #:?"
 priority = 20
+
+[managers.rust_component]
+add = "rustup component add #:?"
+remove = "rustup component remove #:?"
+priority = 17
 
 [hooks.once]
 set_rust_toolchain = {command="rustup default nightly", priority=15}

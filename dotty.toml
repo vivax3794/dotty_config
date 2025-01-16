@@ -1,8 +1,25 @@
 [module]
 import = [
 	"dotty_modules/system_packages.toml",
+    "dotty_modules/de.toml",
+    "dotty_modules/widgets.toml",
+    "dotty_modules/audio.toml",
 	"dotty_modules/git.toml",
-	"dotty_modules/rust.toml",
 	"dotty_modules/fish.toml",
-	"dotty_modules/nvim.toml"
+	"dotty_modules/nvim.toml",
+	"dotty_modules/rust.toml",
+	"dotty_modules/discord.toml",
 ]
+
+
+[packages]
+paru = [
+	"kitty",
+	"btop",
+    "nvtop",
+    "floorp",
+    "steam"
+]
+
+[files]
+"~/.config/kitty/kitty.conf" = "./dotfiles/kitty.conf"

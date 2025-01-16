@@ -1,6 +1,9 @@
 [packages]
-paru = ["neovim"]
+paru = ["neovim", "python-pynvim"]
 
 [files."~/.config/nvim"]
 source = "./dotfiles/nvim"
 post_hook = "nvim --headless '+Lazy! install' +qa"
+
+[hooks.update]
+nvim = "nvim --headless '+Lazy! update' +qa"

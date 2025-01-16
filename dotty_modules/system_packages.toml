@@ -1,6 +1,6 @@
 [managers.pacman]
 add = "pacman -S #:?"
-remove = "pacman -Rns #:?"
+remove = "pacman -Rns #:? || true"
 sudo = true
 priority = 0
 
@@ -17,7 +17,12 @@ makepkg -si
 
 [managers.paru]
 add = "paru -S #:?"
-remove = "paru -Rns #:?"
+remove = "paru -Rns #:? || true"
 update = "paru"
 priority = 10
 
+[managers.service]
+add = "systemctl enable #:?"
+remove = "systemctl disable #:?"
+update = "systemctl restart #:?"
+priority = 100

@@ -1,0 +1,12 @@
+[packages]
+paru = [
+	"pipewire",
+	"pipewire-audio",
+	"pipewire-pulse",
+	"pipewire-alsa",
+	"pavucontrol",
+	"wireplumber",
+	"bluez",
+	"bluez-utils"
+]
+service = ["bluetooth.service"]

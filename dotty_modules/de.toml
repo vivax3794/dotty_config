@@ -1,0 +1,28 @@
+[packages]
+paru = [
+	"nvidia",
+	"nvidia-utils",
+	"egl-wayland",
+	"wayland",
+    "wl-clipboard",
+	"hyprland",
+	"ttf-fira-code",
+    "dunst", # notifications
+    "hyprpaper",
+]
+
+[files."~/.config/dunst/dunstrc"]
+source = "./dotfiles/dunstrc.ini"
+
+[files."~/.config/hypr/hyprland.conf"]
+source = "./dotfiles/hyprland.conf"
+post_hook = "hyprctl reload"
+
+[files."~/.config/hypr/hyprpaper.conf"]
+source = "./dotfiles/hyprpaper.conf"
+post_hook = "hyprctl hyprpaper reload"
+priority = 60
+
+[files."/etc/systemd/system/getty@tty1.service.d/override.conf"]
+source = "./dotfiles/getty.service"
+sudo = true

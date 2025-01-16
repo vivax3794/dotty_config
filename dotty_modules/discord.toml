@@ -1,0 +1,6 @@
+[packages]
+paru = ["discord", "vencord-installer-bin"]
+
+[hooks.once]
+vencord = "sudo VencordInstaller --install"
+
