@@ -1,21 +1,18 @@
 # NeoVim
 - [X] Tressitter
-- [-] Tab bar
-    * Actualy I am not sure I want one :P
 - [X] Icons
 - [X] Rust
 - [X] Yank to system buffer doesnt work
 - [X] Notifications
 - [X] Lsp progress
 - [ ] Todo mangement
-- [ ] Make change not copy to clipboard
+- [X] Make change not copy to clipboard
     * Usually when I want that I use `x` then `i`/`a`/...
     * When I do `c` its is VERY often I just pasted something, need to edit it, and then I want to paste it again somewhere else, which the default behaviour fucks up.
-- [ ] Make change not copy to clipboard
 
 # Fish
 - [ ] colors
-- [X] Prompt
+- [ ] Prompt
 - [X] Bluetooth connect
 - [X] core alternatives
     - [X] bat
@@ -37,6 +34,7 @@
 - [X] program runner
 - [ ] Shutdown menu
 - [ ] Scratch terminal
+- [ ] Scratch browser
 
 # top bar
 - [X] workspaces
