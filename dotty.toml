@@ -9,8 +9,8 @@ import = [
 	"dotty_modules/nvim.toml",
 	"dotty_modules/rust.toml",
 	"dotty_modules/discord.toml",
+	"dotty_modules/tasks.toml",
 ]
-
 
 [packages]
 paru = [
@@ -20,7 +20,16 @@ paru = [
     "floorp",
     "steam",
     "obs-studio",
+    "neofetch"
 ]
 
 [files]
 "~/.config/kitty/kitty.conf" = "./dotfiles/kitty.conf"
+
+[template.abbr]
+da = "dotty apply"
+co = "cd ~/coding"
+cc = "cd ~/dotty_config"
+
+[template.alias]
+dotty = "$HOME/coding/dotty/target/release/dotty"

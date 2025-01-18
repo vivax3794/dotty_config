@@ -19,3 +19,16 @@ set_rust_toolchain = {command="rustup default nightly", priority=15}
 
 [hooks.update]
 rust = {command="rustup update", priority=18}
+
+[template.abbr]
+c = "cargo"
+cn = "cargo new"
+cr = "cargo run"
+ct = "cargo nextest run"
+b = "bacon"
+
+[template]
+path_env = [
+    "$HOME/.cargo/bin",
+    "$HOME/.rustup/toolchains/(rustup show active-toolchain | cut -d' ' -f1)/bin "
+]

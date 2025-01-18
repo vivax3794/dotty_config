@@ -6,7 +6,8 @@ paru = [
 	"wayland",
     "wl-clipboard",
 	"hyprland",
-	"ttf-fira-code",
+	"ttf-firacode-nerd",
+    "noto-fonts-emoji",
     "dunst", # notifications
     "hyprpaper",
     "qt6-wayland",
@@ -16,15 +17,20 @@ paru = [
     "slurp",
     "tofi",
     "waybar",
+    "pyprland",
 ]
 
 [files."~/.config/hypr/hyprland.conf"]
-source = "./dotfiles/hyprland.conf"
+source = "./dotfiles/hyprland.conf.tera"
 post_hook = "hyprctl reload"
 
 [files."~/.config/hypr/hyprpaper.conf"]
-source = "./dotfiles/hyprpaper.conf"
-post_hook = "hyprctl hyprpaper reload"
+source = "./dotfiles/hyprpaper.conf.tera"
+post_hook = "killall hyprpaper; sleep 0.2; hyprctl dispatch exec hyprpaper"
+
+[files."~/.config/hypr/pyprland.toml"]
+source = "./dotfiles/pyprland.toml"
+post_hook = "pypr reload"
 
 [files]
 "~/.config/dunst/dunstrc"= "./dotfiles/dunstrc.ini"
@@ -32,8 +38,16 @@ post_hook = "hyprctl hyprpaper reload"
 
 [files."~/.config/waybar"]
 source = "./dotfiles/waybar"
-post_hook = "killall waybar; sleep 1; hyprctl dispatch exec waybar"
+post_hook = "killall waybar; sleep 0.2; hyprctl dispatch exec waybar"
 
 [files."/etc/systemd/system/getty@tty1.service.d/override.conf"]
 source = "./dotfiles/getty.service"
 sudo = true
+
+[template.abbr]
+mn = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,0"
+mr = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,1"
+
+[template]
+wallpaper = "/home/viv/dotty_config/wallpaper/wide.jpeg"
+startup = ["hyprpaper", "waybar", "pypr"]

@@ -3,7 +3,6 @@ vim.opt.expandtab = true;
 vim.opt.tabstop = 4;
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.mouse=''
 
 vim.keymap.set("i", "<C-s>", "<Esc>:wa<CR>a", {silent = true})
 vim.keymap.set("n", "<C-s>", ":wa<CR>", {silent = true})
@@ -22,6 +21,12 @@ vim.keymap.set('n', 'd', '"_d', { noremap = true })
 vim.keymap.set('n', 'D', '"_D', { noremap = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
 vim.keymap.set('v', 'd', '"_d', { noremap = true })
+
+vim.keymap.set('n', '<left>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<right>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader><left>', '<Cmd>BufferMovePrevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader><right>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>', { noremap = true, silent = true })
 
 return {
     {
@@ -54,5 +59,10 @@ return {
             local file_browser = require("telescope").extensions.file_browser.file_browser
             vim.keymap.set("n", "<leader>ft", file_browser, {})
         end
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
     },
 }

@@ -1,8 +1,17 @@
 [packages]
-paru = ["fish", "bat", "ripgrep", "exa"]
+paru = ["fish", "starship", "bat", "ripgrep", "exa"]
 
-[files."~/.config/fish/config.fish"]
-source = "./dotfiles/config.fish"
+[files]
+"~/.config/fish/config.fish" = "./dotfiles/config.fish.tera"
+"~/.config/starship.toml" = "./dotfiles/starship.toml"
 
 [hooks.once]
 set_shell = "chsh -s /usr/bin/fish"
+
+[template.abbr]
+ls = "exa -la"
+grep = "rg"
+cat = "bat"
+cp = "cp -rv"
+rm = "rm -rv"
+mv = "mv -v"

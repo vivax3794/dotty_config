@@ -9,7 +9,7 @@ window#waybar {
 }
 
 .modules-left,
-.modules-center,
+#custom-todo,
 .modules-right {
     background: @background;
     color: @foreground;
@@ -34,10 +34,12 @@ window#waybar {
     color: @selected-foreground;
 }
 
-.modules-center {
+#custom-todo {
     border-radius: 0 0 20px 20px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 4px;
+    font-size: 23px;
 }
 
 .modules-right {

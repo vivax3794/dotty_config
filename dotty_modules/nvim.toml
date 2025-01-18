@@ -7,3 +7,6 @@ post_hook = "nvim --headless '+Lazy! install' +qa"
 
 [hooks.update]
 nvim = "nvim --headless '+Lazy! update' +qa"
+
+[template.abbr]
+n = "nvim"

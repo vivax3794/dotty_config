@@ -44,7 +44,20 @@ end
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                ensure_installed = {"rust", "lua"},
+
+                auto_install = true,
+                ignore_install = {"kdl", "html"},
+
+                highlight = {
+                    enable = true,
+                    disable = {"vimdoc", "help"}
+                }
+            }
+        end
     },
     {
         "mrcjkb/rustaceanvim",
@@ -80,7 +93,32 @@ return {
             }
         end
     },
-    "neovim/nvim-lspconfig",
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+local lspconfig = require('lspconfig')
+
+-- Custom command to run your LSP server
+require('lspconfig.configs').surf = {
+    default_config = {
+        cmd = { "/home/viv/coding/ripple/target/release/surf" }, -- Command to start your LSP server
+        filetypes = { "css" }, -- Filetypes your server will handle
+        settings = {}, -- Additional server-specific settings
+        root_dir = function(fname)
+            return lspconfig.util.find_git_ancestor(fname)
+        end;
+    },
+}
+
+-- Enable your custom server
+lspconfig.surf.setup({
+    on_attach = function(client, bufnr)
+        print("Surf LSP attached to buffer " .. bufnr)
+    end,
+})
+
+        end
+    },
     {
         "hrsh7th/nvim-cmp",
         dependencies = {"hrsh7th/cmp-nvim-lsp", "SirVer/ultisnips", "quangnguyen30192/cmp-nvim-ultisnips"},

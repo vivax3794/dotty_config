@@ -5,14 +5,13 @@
 - [X] Yank to system buffer doesnt work
 - [X] Notifications
 - [X] Lsp progress
-- [ ] Todo mangement
 - [X] Make change not copy to clipboard
     * Usually when I want that I use `x` then `i`/`a`/...
     * When I do `c` its is VERY often I just pasted something, need to edit it, and then I want to paste it again somewhere else, which the default behaviour fucks up.
 
 # Fish
-- [ ] colors
-- [ ] Prompt
+- [X] colors
+- [X] Prompt
 - [X] Bluetooth connect
 - [X] core alternatives
     - [X] bat
@@ -33,8 +32,7 @@
 - [X] notifications
 - [X] program runner
 - [ ] Shutdown menu
-- [ ] Scratch terminal
-- [ ] Scratch browser
+- [X] Scratch terminal
 
 # top bar
 - [X] workspaces

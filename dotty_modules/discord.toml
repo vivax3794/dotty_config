@@ -4,3 +4,5 @@ paru = ["discord", "vencord-installer-bin"]
 [hooks.once]
 vencord = "sudo VencordInstaller --install"
 
+[template]
+startup = ["[workspace 3] discord --disable-gpu"]

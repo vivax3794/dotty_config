@@ -1,0 +1,12 @@
+[packages]
+paru = ["task", "jq"]
+
+[files]
+"~/.config/task/taskrc" = "./dotfiles/taskrc"
+
+[template.abbr]
+t = 'task'
+ts = 'task start'
+td = 'task done'
+ta = 'task add project:$(basename $PWD)'
+tl = 'task project:$(basename $PWD) list'

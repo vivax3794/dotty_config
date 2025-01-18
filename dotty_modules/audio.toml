@@ -10,3 +10,10 @@ paru = [
 	"bluez-utils"
 ]
 service = ["bluetooth.service"]
+
+[hooks.update]
+reconnect_bluetooth = {command="sleep 0.5; bluetoothctl connect AC:80:0A:F4:0B:FC", priority=255}
+
+[template.abbr]
+bc = "bluetoothctl connect AC:80:0A:F4:0B:FC"
+bd = "bluetoothctl disconnect AC:80:0A:F4:0B:FC"

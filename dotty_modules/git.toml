@@ -4,3 +4,10 @@ paru = ["github-cli", "lazygit"]
 [hooks.once]
 git_name = "git config --global user.name vivax"
 git_email = "git config --global user.email vivax3794@protonmail.com"
+
+[template.abbr]
+backup = 'git add .; git commit -m "$(date)"; git push'
+ghr = "gh repo create"
+clone = "gh repo clone"
+gp = "git pull"
+g = "lazygit"
