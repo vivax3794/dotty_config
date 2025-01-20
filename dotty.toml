@@ -10,6 +10,7 @@ import = [
 	"dotty_modules/rust.toml",
 	"dotty_modules/discord.toml",
 	"dotty_modules/tasks.toml",
+	"dotty_modules/game_dev.toml",
 ]
 
 [packages]

@@ -1,0 +1,3 @@
+[packages]
+paru = ["libresprite", "blender", "unityhub", "lld", "clang", "mold", "ldtk"]
+rust_component = ["rustc-codegen-cranelift-preview"]

@@ -18,6 +18,7 @@ paru = [
     "tofi",
     "waybar",
     "pyprland",
+    "hyprshot",
 ]
 
 [files."~/.config/hypr/hyprland.conf"]

@@ -1,5 +1,5 @@
 [packages]
-paru = ["fish", "starship", "bat", "ripgrep", "exa"]
+paru = ["fish", "starship", "bat", "ripgrep", "exa", "zoxide"]
 
 [files]
 "~/.config/fish/config.fish" = "./dotfiles/config.fish.tera"
@@ -15,3 +15,4 @@ cat = "bat"
 cp = "cp -rv"
 rm = "rm -rv"
 mv = "mv -v"
+cd = "z"

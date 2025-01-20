@@ -1,5 +1,5 @@
 [packages]
-paru = ["rustup"]
+paru = ["rustup", "just"]
 cargo = ["cargo-nextest", "bacon"]
 rust_component = ["rust-analyzer"]
 

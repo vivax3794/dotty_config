@@ -85,7 +85,6 @@ return {
                                 autoClosingAngleBrackets = true
                             },
                             cargo = {
-                                features = "all"
                             }
                         }
                     }

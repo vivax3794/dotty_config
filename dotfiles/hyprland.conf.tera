@@ -53,6 +53,7 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 bindn = $mainMod, Q, exec, /home/viv/dotty_config/scripts/open_terminal.sh
 bind = $mainMod, B, exec, /home/viv/dotty_config/scripts/open_browser_tab.sh
 
+bind = $mainMod, S, exec, hyprshot -m region --clipboard-only
 bind = $mainMod, T, exec, pypr toggle term
 
 bind = $mainMod, C, killactive,
