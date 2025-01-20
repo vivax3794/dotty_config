@@ -29,8 +29,6 @@ paru = [
 
 [template.abbr]
 da = "dotty apply"
-co = "cd ~/coding"
-cc = "cd ~/dotty_config"
 
 [template.alias]
 dotty = "$HOME/coding/dotty/target/release/dotty"
