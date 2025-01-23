@@ -3,7 +3,8 @@
 ################
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=DP-1,3440x1440@100,auto,auto
+# monitor=DP-1,3440x1440@100,auto,auto
+monitor=DP-1,3440x1440@100,auto,1
 monitor=HDMI-A-1,1920x1080@60,auto-left,1,transform,1
 
 workspace=1,monitor:DP-1
@@ -29,6 +30,8 @@ master {
 {% for program in startup %}
 exec-once = {{program}}
 {% endfor %}
+
+exec-once = xrandr --output DP-1 --primary
 
 
 #############################

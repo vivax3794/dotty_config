@@ -10,6 +10,7 @@ set_shell = "chsh -s /usr/bin/fish"
 
 [template.abbr]
 ls = "exa -la"
+size = "exa -la --total-size"
 grep = "rg"
 cat = "bat"
 cp = "cp -rv"

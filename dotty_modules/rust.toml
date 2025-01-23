@@ -14,6 +14,11 @@ add = "rustup component add #:?"
 remove = "rustup component remove #:?"
 priority = 17
 
+[managers.rust_target]
+add = "rustup target install #:?"
+remove = "rustup target uninstall #:?"
+priority = 16
+
 [hooks.once]
 set_rust_toolchain = {command="rustup default nightly", priority=15}
 

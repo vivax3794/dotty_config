@@ -21,7 +21,9 @@ paru = [
     "floorp",
     "steam",
     "obs-studio",
-    "neofetch"
+    "neofetch",
+    "7zip",
+    "chromium"
 ]
 
 [files]
