@@ -31,7 +31,6 @@ master {
 exec-once = {{program}}
 {% endfor %}
 
-exec-once = xrandr --output DP-1 --primary
 
 
 #############################

@@ -11,6 +11,7 @@ import = [
 	"dotty_modules/discord.toml",
 	"dotty_modules/tasks.toml",
 	"dotty_modules/game_dev.toml",
+	"dotty_modules/ai.toml",
 ]
 
 [packages]
@@ -19,11 +20,15 @@ paru = [
 	"btop",
     "nvtop",
     "floorp",
+    "lutris",
+    "umu-launcher",
     "steam",
     "obs-studio",
     "neofetch",
     "7zip",
-    "chromium"
+    "chromium",
+    "winetricks",
+    "protontricks"
 ]
 
 [files]

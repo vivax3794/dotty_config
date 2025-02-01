@@ -15,10 +15,14 @@ paru = [
     "xdg-desktop-portal-hyprland",
     "grim",
     "slurp",
-    "tofi",
+    "tofi-git",
     "waybar",
     "pyprland",
     "hyprshot",
+    "lib32-nvidia-utils",
+    "nvidia-settings",
+    "vulkan-icd-loader",
+    "lib32-vulkan-icd-loader"
 ]
 
 [files."~/.config/hypr/hyprland.conf"]
@@ -51,4 +55,10 @@ mr = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,1"
 
 [template]
 wallpaper = "/home/viv/dotty_config/wallpaper/wide.jpeg"
-startup = ["hyprpaper", "waybar", "pypr"]
+startup = [
+    "hyprpaper",
+    "waybar",
+    "pypr",
+    "xrandr --output DP-1 --primary",
+    "curl -X POST http://pi.home:1880/pc_on"
+]

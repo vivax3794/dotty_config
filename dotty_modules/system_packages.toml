@@ -17,7 +17,7 @@ makepkg -si
 
 [managers.paru]
 add = "paru -S #:?"
-remove = "paru -Rns #:? || true"
+remove = "paru -Rns $(for pkg in #:?; do pacman -Q \"$pkg\" &>/dev/null && echo \"$pkg\"; done) || true"
 update = "paru"
 priority = 10
 
