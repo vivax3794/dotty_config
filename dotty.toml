@@ -18,7 +18,6 @@ import = [
 paru = [
 	"kitty",
 	"btop",
-    "nvtop",
     "floorp",
     "lutris",
     "umu-launcher",
@@ -26,10 +25,12 @@ paru = [
     "obs-studio",
     "neofetch",
     "7zip",
-    "chromium",
     "winetricks",
-    "protontricks"
+    "protontricks",
+    "man",
+    "tree",
 ]
+cargo = ["tree-sitter-cli"]
 
 [files]
 "~/.config/kitty/kitty.conf" = "./dotfiles/kitty.conf"

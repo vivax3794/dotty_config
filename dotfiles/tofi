@@ -1,3 +1,5 @@
+text-cursor=true
+
 font = Fira Code
 font-size = 24
 prompt-color = #FF00FF

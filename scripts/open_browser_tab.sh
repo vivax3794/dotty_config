@@ -1,35 +1,45 @@
 #!/bin/bash
 
-# Extract class and title of the active window
-window_class=$(hyprctl activewindow | rg -o "class.*" | awk '{print $2}')
-window_title=$(hyprctl activewindow | rg -o "title.*" | cut -d'"' -f2)
+last_search_file="/tmp/last_search"
 
-wait_for_window() {
+focus_window() {
     local match="$1"
     while ! hyprctl clients | rg "$match"; do
         sleep 0.1
     done
+    hyprctl dispatch focuswindow $match
 }
 
-if [[ "$window_class" == "floorp" ]]; then
-    floorp https://duckduckgo.com
-elif [[ "$window_class" == "kitty" ]]; then
-    if [[ "$window_title" =~ "nvim" ]]; then
-        floorp https://docs.rs/
-        wait_for_window "title:.*Docs.rs.*"
-        hyprctl dispatch focuswindow "title:.*Docs.rs.*"
-    elif [[ "$window_title" =~ "lazygit" ]]; then
-        floorp https://github.com/
-        wait_for_window "title:.*GitHub.*"
-        hyprctl dispatch focuswindow "title:.*GitHub.*"
-    else
-        floorp
-    fi
-elif [[ "$window_class" == "obs" ]]; then
-    floorp https://dashboard.twitch.tv/u/vivax3794/stream-manager
-    wait_for_window "title:.*Twitch.*"
-    hyprctl dispatch focuswindow "title:.*Twitch.*"
-else
-    floorp
-fi
+expand_bangs() {
+    local query="$1"
+    query=$(echo "$query" | sed -E \
+        -e 's/^!d /!docsrs /' \
+        -e 's/^!r /!rust /' \
+        -e 's/^!p /!py /' \
+    )
+    echo "$query"
+}
 
+custom_bangs() {
+    local query="$1"
+
+    if [[ "$query" =~ ^!docsrs[[:space:]]+([a-zA-Z0-9_-]+)[[:space:]]+(.+)$ ]]; then
+        crate="${BASH_REMATCH[1]}"
+        item="${BASH_REMATCH[2]}"
+        echo "https://docs.rs/${crate}/latest/?search=${item}"
+    else 
+        echo "https://duckduckgo.com/?q=${query}"
+    fi
+}
+
+normal_search() {
+    search=$(cat "$last_search_file" | tofi --require-match=false --prompt "search: ")
+    echo "$search\n" > "$last_search_file"
+
+    search=$(expand_bangs "$search")
+    search=$(custom_bangs "$search")
+    floorp "${search}"
+    focus_window "class:floorp"
+}
+
+normal_search

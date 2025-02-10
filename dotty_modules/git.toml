@@ -8,6 +8,6 @@ git_email = "git config --global user.email vivax3794@protonmail.com"
 [template.abbr]
 backup = 'git add .; git commit -m "$(date)"; git push'
 ghr = "gh repo create"
-clone = "gh repo clone"
+clone = "gh repo clone -- --depth 1"
 gp = "git pull"
 g = "lazygit"

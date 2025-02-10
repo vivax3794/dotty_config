@@ -2,6 +2,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.cmdheight = 0
+vim.opt.laststatus = 0
 
 return {
     {
@@ -33,7 +34,12 @@ return {
         {
             "folke/noice.nvim",
             event = "VeryLazy",
-            opts = {},
+            opts = {
+                notify = {
+                    enabled = true,
+                    timeout = 500,
+                },
+            },
             dependencies = {
                 -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
                 "MunifTanjim/nui.nvim",
@@ -42,6 +48,16 @@ return {
                 --   If not available, we use `mini` as the fallback
                 "rcarriga/nvim-notify"
             }
+        },
+        {
+            "rcarriga/nvim-notify",
+            opts = {
+                timeout = 500
+            }
+        },
+        {
+          'stevearc/dressing.nvim',
+          opts = {},
         },
         {
             "romgrk/barbar.nvim",

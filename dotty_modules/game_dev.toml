@@ -1,4 +1,2 @@
 [packages]
-paru = ["libresprite", "blender", "lld", "clang", "mold", "ldtk", "binaryen", "wasm-bindgen"]
-rust_component = ["rustc-codegen-cranelift-preview"]
-rust_target = ["wasm32-unknown-unknown"]
+paru = ["libresprite", "blender", "ldtk"]

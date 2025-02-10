@@ -1,7 +1,8 @@
 [packages]
-paru = ["rustup", "just"]
-cargo = ["cargo-nextest", "bacon"]
-rust_component = ["rust-analyzer"]
+paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
+cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk"]
+rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
+rust_target = ["wasm32-unknown-unknown"]
 
 [managers.cargo]
 add = "cargo install #:?"

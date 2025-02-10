@@ -25,9 +25,14 @@ local rust_attach = function(_, bufnr)
         "n",
         "<leader>a",
         function()
-            vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping
-            -- or vim.lsp.buf.codeAction() if you don't want grouping.
+            vim.cmd.RustLsp("codeAction")
         end,
+        {silent = true, buffer = bufnr}
+    )
+    vim.keymap.set(
+        "v",
+        "<leader>a",
+        vim.lsp.buf.code_action,
         {silent = true, buffer = bufnr}
     )
     vim.keymap.set(
@@ -97,23 +102,21 @@ return {
         config = function()
 local lspconfig = require('lspconfig')
 
--- Custom command to run your LSP server
 require('lspconfig.configs').surf = {
     default_config = {
-        cmd = { "/home/viv/coding/ripple/target/release/surf" }, -- Command to start your LSP server
-        filetypes = { "css" }, -- Filetypes your server will handle
-        settings = {}, -- Additional server-specific settings
+        cmd = { "/home/viv/coding/ripple/bin/surf" },
+        filetypes = { "css" },
+        settings = {},
         root_dir = function(fname)
             return lspconfig.util.find_git_ancestor(fname)
         end;
     },
 }
 
--- Enable your custom server
 lspconfig.surf.setup({
-    on_attach = function(client, bufnr)
-        print("Surf LSP attached to buffer " .. bufnr)
-    end,
+    flags = {
+        debounce_text_changes = 250,
+    },
 })
 
         end

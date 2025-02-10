@@ -59,6 +59,6 @@ startup = [
     "hyprpaper",
     "waybar",
     "pypr",
-    "xrandr --output DP-1 --primary",
+    "xrandr --output DP-1 --primary", # XWayland programs (mostly games) need this to launch on correct monitor
     "curl -X POST http://pi.home:1880/pc_on"
 ]
