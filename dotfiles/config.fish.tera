@@ -16,7 +16,9 @@ alias {{name}} -- '{{command | addslashes}}'
 set -Ux fish_user_paths {{path}} $fish_user_paths
 {% endfor %}
 
-eval "$(zoxide init fish)"
+{% for command in fish_commands -%}
+{{command}}
+{% endfor %}
 
 # ========= COLORS =================
 set -l foreground c0caf5

@@ -24,5 +24,4 @@ priority = 10
 [managers.service]
 add = "systemctl enable #:?"
 remove = "systemctl disable #:?"
-update = "systemctl restart #:?"
 priority = 100

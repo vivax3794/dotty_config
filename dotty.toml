@@ -12,6 +12,7 @@ import = [
 	"dotty_modules/tasks.toml",
 	"dotty_modules/game_dev.toml",
 	"dotty_modules/ai.toml",
+	"dotty_modules/web_dev.toml",
 ]
 
 [packages]
@@ -19,6 +20,7 @@ paru = [
 	"kitty",
 	"btop",
     "floorp",
+    "firefox",
     "lutris",
     "umu-launcher",
     "steam",
@@ -29,6 +31,13 @@ paru = [
     "protontricks",
     "man",
     "tree",
+    "watchexec",
+    "gamemode",
+    "lib32-gamemode",
+    "dolphin-emu",
+    "qbittorrent",
+    "testdisk",
+    "extundelete"
 ]
 cargo = ["tree-sitter-cli"]
 

@@ -11,8 +11,8 @@ paru = [
 ]
 service = ["bluetooth.service"]
 
-[hooks.update]
-reconnect_bluetooth = {command="sleep 0.5; bluetoothctl connect AC:80:0A:F4:0B:FC", priority=255}
+[files]
+"~/.config/wireplumber/wireplumber.conf.d/overwride.conf" = "./dotfiles/wireplumber.conf"
 
 [template.abbr]
 bc = "bluetoothctl connect AC:80:0A:F4:0B:FC"

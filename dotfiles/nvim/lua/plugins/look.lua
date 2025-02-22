@@ -69,6 +69,10 @@ return {
                 vim.g.barbar_auto_setup = false
             end,
             opts = {}
+        },
+        {
+            "andweeb/presence.nvim",
+            opts = {}
         }
     }
 }

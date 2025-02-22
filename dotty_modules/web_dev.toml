@@ -1,0 +1,28 @@
+[packages]
+fisher = ["jorgebucaran/nvm.fish"]
+node = ["23"]
+npm = ["@vue/language-server", "@vue/typescript-plugin", "vue-tsc", "typescript-language-server"]
+paru = [
+  "webkit2gtk-4.1",
+  "base-devel",
+  "curl",
+  "wget",
+  "file",
+  "openssl",
+  "appmenu-gtk-module",
+  "libappindicator-gtk3",
+  "librsvg",
+]
+
+[managers.node]
+add = "fish -c 'nvm install #:?'"
+remove = "fish -c 'nvm uninstall #:?' || true"
+
+[managers.npm]
+add = "npm -g install #:?"
+remove = "npm -g uninstall #:?"
+update = "npm update -g"
+priority = 60
+
+[template]
+fish_commands = ["nvm use 23"]

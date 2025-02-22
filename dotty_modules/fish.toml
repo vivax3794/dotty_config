@@ -1,5 +1,10 @@
 [packages]
-paru = ["fish", "starship", "bat", "ripgrep", "exa", "zoxide"]
+paru = ["fish", "starship", "bat", "ripgrep", "exa", "zoxide", "fisher"]
+
+[managers.fisher]
+add = "fish -c 'fisher install #:?'"
+remove = "fish -c 'fisher remove #:?' || true"
+update = "fish -c 'fisher update'"
 
 [files]
 "~/.config/fish/config.fish" = "./dotfiles/config.fish.tera"
@@ -17,3 +22,6 @@ cp = "cp -rv"
 rm = "rm -rv"
 mv = "mv -v"
 cd = "z"
+
+[template]
+fish_commands = ['eval "$(zoxide init fish)"']

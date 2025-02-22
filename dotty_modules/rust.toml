@@ -1,6 +1,6 @@
 [packages]
 paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
-cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk"]
+cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit"]
 rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
 

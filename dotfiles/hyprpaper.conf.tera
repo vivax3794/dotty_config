@@ -1,2 +1,4 @@
-preload = {{wallpaper}}
-wallpaper = , {{wallpaper}}
+preload = {{wallpaper_wide}}
+preload = {{wallpaper_normal}}
+wallpaper = DP-1, {{wallpaper_wide}}
+wallpaper = HDMI-A-1, {{wallpaper_normal}}
