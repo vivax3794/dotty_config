@@ -78,21 +78,21 @@ return {
                             checkOnSave = {
                                 enable = true,
                                 command = "clippy",
-                                allTargets = true
+                                -- allTargets = false
                             },
                             formatOnSave = {
                                 enable = true
                             },
-                            completion = {
-                                autoClosingAngleBrackets = true
+                            cachePriming = {
+                                -- enable = false
                             },
-                            -- cachePriming = {
-                            --     enable = false
-                            -- },
-                            -- procMacro = {
-                            --     enable = false
-                            -- },
-                            cargo = {}
+                            procMacro = {
+                                -- enable = false
+                            },
+                            cargo = {
+                                -- loadOutDirsFromCheck = false,
+                                -- allTargets = false
+                            }
                         }
                     }
                 }

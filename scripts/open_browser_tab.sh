@@ -38,8 +38,8 @@ normal_search() {
 
     search=$(expand_bangs "$search")
     search=$(custom_bangs "$search")
-    floorp "${search}"
-    focus_window "class:floorp"
+    zen-browser "${search}"
+    focus_window "class:.*zen.*"
 }
 
 normal_search

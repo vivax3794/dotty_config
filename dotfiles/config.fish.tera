@@ -8,10 +8,6 @@ set -x EDITOR nvim
 abbr --add {{name}} -- '{{command}}'
 {% endfor %}
 
-{% for name, command in alias -%}
-alias {{name}} -- '{{command | addslashes}}'
-{% endfor %}
-
 {% for path in path_env -%}
 set -Ux fish_user_paths {{path}} $fish_user_paths
 {% endfor %}

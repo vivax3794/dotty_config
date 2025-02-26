@@ -19,8 +19,7 @@ import = [
 paru = [
 	"kitty",
 	"btop",
-    "floorp",
-    "firefox",
+    "zen-browser",
     "lutris",
     "umu-launcher",
     "steam",
@@ -46,6 +45,3 @@ cargo = ["tree-sitter-cli"]
 
 [template.abbr]
 da = "dotty apply"
-
-[template.alias]
-dotty = "$HOME/coding/dotty/target/release/dotty"

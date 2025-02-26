@@ -9,7 +9,6 @@ paru = [
 	"ttf-firacode-nerd",
     "noto-fonts-emoji",
     "dunst", # notifications
-    "hyprpaper",
     "qt6-wayland",
     "xdg-desktop-portal",
     "xdg-desktop-portal-hyprland",
@@ -22,16 +21,13 @@ paru = [
     "lib32-nvidia-utils",
     "nvidia-settings",
     "vulkan-icd-loader",
-    "lib32-vulkan-icd-loader"
+    "lib32-vulkan-icd-loader",
+    "mpvpaper"
 ]
 
 [files."~/.config/hypr/hyprland.conf"]
 source = "./dotfiles/hyprland.conf.tera"
 post_hook = "hyprctl reload"
-
-[files."~/.config/hypr/hyprpaper.conf"]
-source = "./dotfiles/hyprpaper.conf.tera"
-post_hook = "killall hyprpaper; sleep 0.2; hyprctl dispatch exec hyprpaper"
 
 [files."~/.config/hypr/pyprland.toml"]
 source = "./dotfiles/pyprland.toml"
@@ -54,12 +50,10 @@ mn = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,0"
 mr = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,1"
 
 [template]
-wallpaper_wide = "/home/viv/dotty_config/wallpaper/wide.jpeg"
-wallpaper_normal = "/home/viv/dotty_config/wallpaper/normal.png"
 startup = [
-    "hyprpaper",
-    "waybar",
+   "waybar",
     "pypr",
     "xrandr --output DP-1 --primary", # XWayland programs (mostly games) need this to launch on correct monitor
-    "curl -X POST http://pi.home:1880/pc_on"
+    "curl -X POST http://pi.home:1880/pc_on",
+    "bash ~/dotty_config/scripts/wallpaper.sh"
 ]
