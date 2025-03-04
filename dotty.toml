@@ -36,7 +36,11 @@ paru = [
     "dolphin-emu",
     "qbittorrent",
     "testdisk",
-    "extundelete"
+    "extundelete",
+    "zsa-keymapp",
+    "firefox",
+    "inkscape",
+    "nbfc"
 ]
 cargo = ["tree-sitter-cli"]
 

@@ -1,6 +1,6 @@
 [packages]
 paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
-cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit"]
+cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy"]
 rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
 
@@ -32,9 +32,12 @@ cn = "cargo new"
 cr = "cargo run"
 ct = "cargo nextest run"
 b = "bacon"
+j = "just"
+
+[template.alias]
+just = "CARGO_MOMMYS_MOODS='chill/ominous/thirsty' CARGO_MOMMYS_ACTUAL=just cargo-mommy"
 
 [template]
 path_env = [
-    "$HOME/.cargo/bin",
-    "$HOME/.rustup/toolchains/(rustup show active-toolchain | cut -d' ' -f1)/bin "
+    "$HOME/.cargo/bin"
 ]
