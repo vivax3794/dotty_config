@@ -23,6 +23,3 @@ add = "npm -g install #:?"
 remove = "npm -g uninstall #:?"
 update = "npm update -g"
 priority = 60
-
-[template]
-fish_commands = ["nvm use 23"]

@@ -1,6 +1,6 @@
 [packages]
 paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
-cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy"]
+cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy", "cargo-hack", "cargo-llvm-cov", "cargo-mutants", "cargo-expand"]
 rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
 

@@ -22,7 +22,8 @@ paru = [
     "nvidia-settings",
     "vulkan-icd-loader",
     "lib32-vulkan-icd-loader",
-    "mpvpaper"
+    "mpvpaper",
+    "qt5-wayland"
 ]
 
 [files."~/.config/hypr/hyprland.conf"]
@@ -44,10 +45,6 @@ post_hook = "killall waybar; sleep 0.2; hyprctl dispatch exec waybar"
 [files."/etc/systemd/system/getty@tty1.service.d/override.conf"]
 source = "./dotfiles/getty.service"
 sudo = true
-
-[template.abbr]
-mn = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,0"
-mr = "hyprctl keyword monitor HDMI-A-1,1920x1080@60,auto-left,1,transform,1"
 
 [template]
 startup = [

@@ -1,4 +1,4 @@
-vim.o.scrolloff = 15;
+vim.o.scrolloff = 5;
 vim.opt.expandtab = true;
 vim.opt.tabstop = 4;
 vim.opt.softtabstop = 4
@@ -65,4 +65,14 @@ return {
         event = "InsertEnter",
         config = true
     },
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {
+            disabled_keys = {
+                ["<Left>"] = {},
+                ["<Right>"] = {}
+            },
+        }
+    }
 }

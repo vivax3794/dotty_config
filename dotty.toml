@@ -5,9 +5,7 @@ import = [
     "dotty_modules/widgets.toml",
     "dotty_modules/audio.toml",
 	"dotty_modules/git.toml",
-	"dotty_modules/fish.toml",
-	"dotty_modules/nvim.toml",
-	"dotty_modules/rust.toml",
+	"dotty_modules/fish.toml", "dotty_modules/nvim.toml", "dotty_modules/rust.toml",
 	"dotty_modules/discord.toml",
 	"dotty_modules/tasks.toml",
 	"dotty_modules/game_dev.toml",
@@ -40,7 +38,8 @@ paru = [
     "zsa-keymapp",
     "firefox",
     "inkscape",
-    "nbfc"
+    "nbfc",
+    "openssh",
 ]
 cargo = ["tree-sitter-cli"]
 

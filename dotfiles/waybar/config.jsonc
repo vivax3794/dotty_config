@@ -6,19 +6,12 @@
         "hyprland/window"
     ],
     "modules-center": [
-        "custom/todo",
     ],
     "modules-right": [
         "tray",
         "pulseaudio/slider",
         "clock",
     ],
-    "custom/todo": {
-        "format": "{}",
-        "exec": "task +ACTIVE export | jq -r '.[0].description // empty'",
-        "hide-empty-text": true,
-        "interval": 2
-    },
     "tray": {
         "spacing": 10
     },
