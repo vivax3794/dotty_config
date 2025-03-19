@@ -40,6 +40,7 @@ paru = [
     "inkscape",
     "nbfc",
     "openssh",
+    "whois"
 ]
 cargo = ["tree-sitter-cli"]
 
