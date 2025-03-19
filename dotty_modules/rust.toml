@@ -31,7 +31,7 @@ c = "cargo"
 cn = "cargo new"
 cr = "cargo run"
 ct = "cargo nextest run"
-b = "bacon"
+b = "bacon --job clippy-all --all-features --summary"
 j = "just"
 
 [template.alias]

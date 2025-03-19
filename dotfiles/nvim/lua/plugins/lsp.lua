@@ -104,7 +104,6 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
 
-            -- No need to set `hybridMode` to `true` as it's the default value
             lspconfig.volar.setup {
                 filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue"},
                 capabilities = require("cmp_nvim_lsp").default_capabilities(),
