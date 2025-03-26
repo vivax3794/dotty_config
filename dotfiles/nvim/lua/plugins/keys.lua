@@ -74,5 +74,6 @@ return {
                 ["<Right>"] = {}
             },
         }
-    }
+    },
+    { 'wakatime/vim-wakatime', lazy = false }
 }
