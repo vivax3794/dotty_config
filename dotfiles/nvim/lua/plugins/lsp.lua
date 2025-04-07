@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd(
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 vim.diagnostic.config {
+    virtual_text = true,
     update_in_insert = true,
     severity_sort = true
 }
@@ -78,7 +79,7 @@ return {
                             checkOnSave = {
                                 enable = true,
                                 command = "clippy",
-                                -- allTargets = false
+                                allFeatures = true
                             },
                             formatOnSave = {
                                 enable = true
@@ -91,7 +92,7 @@ return {
                             },
                             cargo = {
                                 -- loadOutDirsFromCheck = false,
-                                -- allTargets = false
+                                allFeatures = true
                             }
                         }
                     }
