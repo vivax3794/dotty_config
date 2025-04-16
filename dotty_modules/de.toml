@@ -52,5 +52,8 @@ startup = [
     "pypr",
     "xrandr --output DP-1 --primary", # XWayland programs (mostly games) need this to launch on correct monitor
     "curl -X POST http://pi.home:1880/pc_on",
-    "bash ~/dotty_config/scripts/wallpaper.sh"
+    "bash ~/dotty_config/scripts/wallpaper.sh",
+    "[workspace 1] kitty",
+    "[workspace 2] zen-browser",
+    "[workspace 4] obsidian",
 ]

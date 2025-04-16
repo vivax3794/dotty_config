@@ -1,9 +1,12 @@
 local function format_on_save()
     local bufnr = vim.api.nvim_get_current_buf()
     local clients = vim.lsp.get_active_clients({bufnr = bufnr})
-    if #clients > 0 then
-        vim.lsp.buf.format()
+
+    if #clients == 0 then
+        return
     end
+
+    vim.lsp.buf.format()
 end
 
 vim.api.nvim_create_autocmd(
@@ -15,6 +18,9 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 
 vim.diagnostic.config {
     virtual_text = true,
@@ -43,6 +49,10 @@ local rust_attach = function(_, bufnr)
         {silent = true, buffer = bufnr}
     )
     vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer = bufnr})
+
+    vim.keymap.set("n", "<leader>E", ":RustLsp expandMacro<CR>", {silent = true, buffer = bufnr})
+    vim.keymap.set("n", "<leader>md", ":RustLsp moveItem down", {silent = true, buffer = bufnr})
+    vim.keymap.set("n", "<leader>mu", ":RustLsp moveItem up", {silent = true, buffer = bufnr})
 end
 
 return {
@@ -84,14 +94,7 @@ return {
                             formatOnSave = {
                                 enable = true
                             },
-                            cachePriming = {
-                                -- enable = false
-                            },
-                            procMacro = {
-                                -- enable = false
-                            },
                             cargo = {
-                                -- loadOutDirsFromCheck = false,
                                 allFeatures = true
                             }
                         }

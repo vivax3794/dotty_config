@@ -1,7 +1,7 @@
 [packages]
 fisher = ["jorgebucaran/nvm.fish"]
 node = ["23"]
-npm = ["@vue/language-server", "@vue/typescript-plugin", "vue-tsc", "typescript-language-server"]
+npm = ["@vue/language-server", "@vue/typescript-plugin", "vue-tsc", "typescript-language-server", "prettier"]
 paru = [
   "webkit2gtk-4.1",
   "base-devel",
@@ -19,7 +19,7 @@ add = "fish -c 'nvm install #:?'"
 remove = "fish -c 'nvm uninstall #:?' || true"
 
 [managers.npm]
-add = "npm -g install #:?"
-remove = "npm -g uninstall #:?"
-update = "npm update -g"
+add = "fish -c 'nvm use v23.7.0 && npm -g install #:?' || true"
+remove = "fish -c 'nvm use v23.7.0 && npm -g uninstall #:?' || true"
+update = "fish -c 'nvm use v23.7.0 && npm update -g'"
 priority = 60

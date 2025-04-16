@@ -75,7 +75,9 @@ return {
         },
         {
             "andweeb/presence.nvim",
-            opts = {}
+            opts = {
+
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 [packages]
 paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
-cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy", "cargo-hack", "cargo-llvm-cov", "cargo-mutants", "cargo-expand", "cargo-outdated", "cargo-msrv"]
+cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy", "cargo-hack", "cargo-llvm-cov", "cargo-mutants", "cargo-expand", "cargo-outdated", "cargo-msrv", "typos-cli", "mdbook-callouts", "mdbookkit", "cargo-binstall"]
 rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
 
@@ -33,6 +33,8 @@ cr = "cargo run"
 ct = "cargo nextest run"
 b = "bacon --job clippy-all --all-features --summary"
 j = "just"
+t = "watchexec typos"
+tw = "typos -w"
 
 [template.alias]
 just = "CARGO_MOMMYS_MOODS='chill/ominous/thirsty' CARGO_MOMMYS_ACTUAL=just cargo-mommy"
