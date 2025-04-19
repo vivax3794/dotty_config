@@ -28,6 +28,8 @@ vim.keymap.set('n', '<leader><left>', '<Cmd>BufferMovePrevious<CR>', { noremap =
 vim.keymap.set('n', '<leader><right>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>', { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>ft', "<Cmd>Oil --float .<CR>")
+
 return {
     {
         "karb94/neoscroll.nvim",
@@ -51,16 +53,6 @@ return {
         end
     },
     {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = {"nvim-telescope/telescope.nvim"},
-        keys = "<leader>ft",
-        config = function(_, _)
-            require("telescope").load_extension "file_browser"
-            local file_browser = require("telescope").extensions.file_browser.file_browser
-            vim.keymap.set("n", "<leader>ft", file_browser, {})
-        end
-    },
-    {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
@@ -75,5 +67,11 @@ return {
             },
         }
     },
-    { 'wakatime/vim-wakatime', lazy = false }
+    { 'wakatime/vim-wakatime', lazy = false },
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      lazy = false,
+    }
 }

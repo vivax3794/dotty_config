@@ -1,7 +1,8 @@
 [module]
 import = [
 	"dotty_modules/system_packages.toml",
-    "dotty_modules/de.toml",
+    "dotty_modules/hyprland.toml",
+    "dotty_modules/niri.toml",
     "dotty_modules/widgets.toml",
     "dotty_modules/audio.toml",
 	"dotty_modules/git.toml",
