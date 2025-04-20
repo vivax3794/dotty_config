@@ -44,7 +44,10 @@ paru = [
     "whois",
     "earthly",
     "podman",
-    "fastfetch"
+    "fastfetch",
+    "v4l2loopback-dkms",
+    "linux-headers",
+    "downgrade"
 ]
 cargo = ["tree-sitter-cli"]
 
