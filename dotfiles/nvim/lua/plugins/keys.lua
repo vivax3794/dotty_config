@@ -30,6 +30,10 @@ vim.keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>', { noremap = true, silen
 
 vim.keymap.set('n', '<leader>ft', "<Cmd>Oil --float .<CR>")
 
+vim.opt.foldmethod = 'expr'                
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false
+
 return {
     {
         "karb94/neoscroll.nvim",

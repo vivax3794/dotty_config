@@ -7,6 +7,7 @@
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
+    focus-follows-mouse max-scroll-amount="0%"
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
@@ -235,7 +236,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "waybar"
+spawn-at-startup "bash" "-c" "sleep 2 && waybar"
 spawn-at-startup "discord"
 spawn-at-startup "xrandr" "--output" "DP-1" "--primary"
 spawn-at-startup "bash" "/home/viv/dotty_config/scripts/wallpaper.sh"
