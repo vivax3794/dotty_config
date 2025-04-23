@@ -23,7 +23,8 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 
 vim.diagnostic.config {
-    virtual_text = true,
+    virtual_lines = true,
+    -- virtual_text = true,
     update_in_insert = true,
     severity_sort = true
 }
@@ -95,7 +96,10 @@ return {
                                 enable = true
                             },
                             cargo = {
-                                allFeatures = true
+                                allFeatures = true,
+                                buildScripts = {
+                                    rebuildOnSave = false
+                                }
                             }
                         }
                     }
