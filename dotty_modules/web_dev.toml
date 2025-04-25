@@ -23,3 +23,6 @@ add = "fish -c 'nvm use v23.7.0 && npm -g install #:?' || true"
 remove = "fish -c 'nvm use v23.7.0 && npm -g uninstall #:?' || true"
 update = "fish -c 'nvm use v23.7.0 && npm update -g'"
 priority = 60
+
+[template.abbr]
+node = "nvm use v23.7.0" 

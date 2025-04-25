@@ -12,6 +12,11 @@ return {
         config = function()
             require("tokyonight").setup({
                 transparent = true,
+                on_highlights = function(highlights, colors)
+                    highlights.LineNr = { fg = "#ff9e64" }
+                    highlights.LineNrAbove = { fg = "#a1f291" }
+                    highlights.LineNrBelow = { fg = "#a1f291" }
+                end,
             })
             vim.cmd [[colorscheme tokyonight-night]]
         end
