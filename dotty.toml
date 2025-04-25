@@ -16,6 +16,7 @@ import = [
 
 [packages]
 paru = [
+    "act",
     "smem",
 	"kitty",
 	"btop",
