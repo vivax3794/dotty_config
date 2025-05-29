@@ -1,6 +1,6 @@
 [packages]
 paru = ["ollama-cuda", "open-webui"]
 service = ["ollama", "open-webui"]
-npm = ["@anthropic-ai/claude-code"]
+npm = ["@anthropic-ai/claude-code", "mycoder"]
 
 

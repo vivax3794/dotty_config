@@ -10,83 +10,59 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            require("tokyonight").setup({
-                transparent = true,
-                on_highlights = function(highlights, colors)
-                    highlights.LineNr = { fg = "#ff9e64" }
-                    highlights.LineNrAbove = { fg = "#a1f291" }
-                    highlights.LineNrBelow = { fg = "#a1f291" }
-                end,
-            })
+            require("tokyonight").setup(
+                {
+                    transparent = true,
+                    on_highlights = function(highlights, colors)
+                        highlights.LineNr = {fg = "#ff9e64"}
+                        highlights.LineNrAbove = {fg = "#a1f291"}
+                        highlights.LineNrBelow = {fg = "#a1f291"}
+                    end
+                }
+            )
             vim.cmd [[colorscheme tokyonight-night]]
         end
     },
-    "nvim-tree/nvim-web-devicons",
     {
-        "shellRaining/hlchunk.nvim",
-        event = {"BufReadPre", "BufNewFile"},
-        config = function()
-            require("hlchunk").setup(
-                {
-                    chunk = {
-                        enable = true
-                    },
-                    indent = {
-                        enable = true
-                    }
-                }
-            )
-        end
-    },
-    {
-        {
-            "folke/noice.nvim",
-            event = "VeryLazy",
-            opts = {
-                notify = {
-                    enabled = true,
-                    timeout = 500,
-                },
-            },
-            dependencies = {
-                -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-                "MunifTanjim/nui.nvim",
-                -- OPTIONAL:
-                --   `nvim-notify` is only needed, if you want to use the notification view.
-                --   If not available, we use `mini` as the fallback
-                "rcarriga/nvim-notify"
-            }
-        },
-        {
-            "rcarriga/nvim-notify",
-            opts = {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            notify = {
+                enabled = true,
                 timeout = 500
             }
         },
-        {
-          'stevearc/dressing.nvim',
-          opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        }
+    },
+    {
+        "romgrk/barbar.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons" -- OPTIONAL: for file icons
         },
-        {
-            "romgrk/barbar.nvim",
-            dependencies = {
-                "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
-                "nvim-tree/nvim-web-devicons" -- OPTIONAL: for file icons
-            },
-            init = function()
-                vim.g.barbar_auto_setup = false
-            end,
-            opts = {
-                icons = {
-                    button = "",
-                }
-            }
+        event = "BufAdd",
+        init = function()
+            vim.g.barbar_auto_setup = false
+        end,
+        keys = {
+            {"<c-K>", "<Cmd>BufferPrevious<CR>", mode = "n", desc = "Prev tab"},
+            {"<c-J>", "<Cmd>BufferNext<CR>", mode = "n", desc = "Next tab"},
+            {"<leader>j", "<Cmd>BufferMoveNext<CR>", mode = "n", desc = "Move tab right"},
+            {"<leader>k", "<Cmd>BufferMovePrevious<CR>", mode = "n", desc = "Move tab left"},
+            {"<leader>c", "<Cmd>BufferClose<CR>", mode = "n", desc = "Close tab"}
         },
-        {
-            "andweeb/presence.nvim",
-            opts = {
+        opts = {
+            auto_hide = 1,
+            icons = {
+                button = ""
             }
         }
+    },
+    {
+        "andweeb/presence.nvim",
+        event = "VeryLazy",
+        opts = {}
     }
 }
 

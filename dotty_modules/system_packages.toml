@@ -18,7 +18,7 @@ makepkg -si
 [managers.paru]
 add = "paru -S #:?"
 remove = "paru -Rns $(for pkg in #:?; do pacman -Q \"$pkg\" &>/dev/null && echo \"$pkg\"; done) || true"
-update = "paru"
+update = "paru -Syu --ignore davinci-resolve"
 priority = 10
 
 [managers.service]

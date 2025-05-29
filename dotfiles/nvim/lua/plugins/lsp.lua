@@ -1,11 +1,4 @@
 local function format_on_save()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local clients = vim.lsp.get_active_clients({bufnr = bufnr})
-
-    if #clients == 0 then
-        return
-    end
-
     vim.lsp.buf.format()
 end
 
@@ -17,14 +10,11 @@ vim.api.nvim_create_autocmd(
     }
 )
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {desc = "View Error under cursor"})
 
 vim.diagnostic.config {
-    virtual_lines = true,
-    -- virtual_text = true,
+    -- virtual_lines = true,
+    virtual_text = true,
     update_in_insert = true,
     severity_sort = true
 }
@@ -60,6 +50,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        event = {"BufReadPre", "BufNewFile"},
         config = function()
             require("nvim-treesitter.configs").setup {
                 ensure_installed = {"rust", "lua"},
@@ -97,8 +88,12 @@ return {
                             },
                             cargo = {
                                 allFeatures = true,
+                                allTargets = true,
                                 buildScripts = {
                                     rebuildOnSave = false
+                                },
+                                cfgs = {
+                                    "native_test"
                                 }
                             }
                         }
@@ -107,49 +102,70 @@ return {
             }
         end
     },
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            local lspconfig = require("lspconfig")
-
-            lspconfig.volar.setup {
-                filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue"},
-                capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                on_attach = function(client, bufnr)
-                    client.server_capabilities.documentFormattingProvider = false
-                end,
-                init_options = {
-                    vue = {
-                        -- disable hybrid mode
-                        hybridMode = false,
-                    }
-                }
-            }
-        end
-    },
-    {
-        "nvimtools/none-ls.nvim",
-        dependencies = {"nvimtools/none-ls-extras.nvim"},
-        config = function()
-            local null_ls = require("null-ls")
-
-            null_ls.setup(
-                {
-                    sources = {
-                        null_ls.builtins.formatting.prettier,
-                        require("none-ls.diagnostics.eslint")
-                    }
-                }
-            )
-        end
-    },
+    -- {
+    --     "neovim/nvim-lspconfig",
+    --     config = function()
+    --         local lspconfig = require("lspconfig")
+    --
+    --         lspconfig.volar.setup {
+    --             filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue"},
+    --             capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    --             on_attach = function(client, bufnr)
+    --                 client.server_capabilities.documentFormattingProvider = false
+    --             end,
+    --             init_options = {
+    --                 vue = {
+    --                     -- disable hybrid mode
+    --                     hybridMode = false,
+    --                 }
+    --             }
+    --         }
+    --     end
+    -- },
+    -- {
+    --     "nvimtools/none-ls.nvim",
+    --     dependencies = {"nvimtools/none-ls-extras.nvim"},
+    --     config = function()
+    --         local null_ls = require("null-ls")
+    --
+    --         null_ls.setup(
+    --             {
+    --                 sources = {
+    --                     null_ls.builtins.formatting.prettier,
+    --                     require("none-ls.diagnostics.eslint")
+    --                 }
+    --             }
+    --         )
+    --     end
+    -- },
     {
         "hrsh7th/nvim-cmp",
         dependencies = {"hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip"},
-        lazy = false,
+        lazy = true,
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
+
+            require("luasnip.loaders.from_lua").lazy_load {
+                paths = vim.fn.stdpath("config") .. "/snippets"
+            }
+
+            vim.keymap.set(
+                {"i", "s"},
+                "<C-J>",
+                function()
+                    luasnip.jump(1)
+                end,
+                {expr = true, silent = true}
+            )
+            vim.keymap.set(
+                {"i", "s"},
+                "<C-L>",
+                function()
+                    luasnip.jump(-1)
+                end,
+                {expr = true, silent = true}
+            )
 
             cmp.setup {
                 snippet = {

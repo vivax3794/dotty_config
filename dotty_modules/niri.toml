@@ -6,5 +6,5 @@ paru = [
     "xdg-desktop-portal-gnome "
 ]
 
-[files."~/.config/niri/config.kdl"]
-source = "./dotfiles/niri.kdl"
+# [files."~/.config/niri/config.kdl"]
+# source = "./dotfiles/niri.kdl"
