@@ -1,13 +1,30 @@
 [packages]
 paru = ["rustup", "just", "hyperfine", "perf", "lld", "clang", "mold", "binaryen", "wasm-bindgen"]
-cargo = ["cargo-nextest", "bacon", "flamegraph", "cargo-criterion", "cargo-pgo", "trunk", "wasm-pack", "cargo-audit", "twiggy", "wasm-snip", "cargo-bloat", "mdbook", "cargo-llvm-lines", "cargo-mommy", "cargo-hack", "cargo-llvm-cov", "cargo-mutants", "cargo-expand", "cargo-outdated", "cargo-msrv", "typos-cli", "mdbook-callouts", "mdbookkit", "cargo-binstall"]
-rust_component = ["rust-analyzer", "llvm-tools-preview", "rustc-codegen-cranelift-preview"]
+cargo = [
+    "cargo-nextest", 
+    "bacon", 
+    "wasm-pack", 
+    "cargo-audit",
+    "twiggy",
+    "cargo-bloat",
+    "mdbook",
+    "cargo-mommy",
+    "cargo-hack",
+    "cargo-expand",
+    "cargo-outdated",
+    "typos-cli",
+    "mdbook-callouts",
+    "mdbookkit",
+    "cargo-binstall", 
+    "cargo-update"
+]
+rust_component = ["rust-analyzer", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
 
 [managers.cargo]
-add = "cargo install #:?"
+add = "cargo binstall -y #:?"
 remove = "cargo uninstall #:?"
-update = "cargo install #:?"
+update = "cargo install-update -a"
 priority = 20
 
 [managers.rust_component]

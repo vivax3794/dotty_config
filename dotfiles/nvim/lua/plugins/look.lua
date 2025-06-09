@@ -50,7 +50,8 @@ return {
             {"<c-J>", "<Cmd>BufferNext<CR>", mode = "n", desc = "Next tab"},
             {"<leader>j", "<Cmd>BufferMoveNext<CR>", mode = "n", desc = "Move tab right"},
             {"<leader>k", "<Cmd>BufferMovePrevious<CR>", mode = "n", desc = "Move tab left"},
-            {"<leader>c", "<Cmd>BufferClose<CR>", mode = "n", desc = "Close tab"}
+            {"<leader>c", "<Cmd>BufferClose<CR>", mode = "n", desc = "Close tab"},
+            {"<leader>C", "<Cmd>BufferCloseAllButCurrent<CR>", mode = "n", desc = "Close All Other tabs"},
         },
         opts = {
             auto_hide = 1,

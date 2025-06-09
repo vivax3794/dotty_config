@@ -1,7 +1,7 @@
 [packages]
 fisher = ["jorgebucaran/nvm.fish"]
 node = ["23"]
-npm = ["@vue/language-server", "@vue/typescript-plugin", "vue-tsc", "typescript-language-server", "prettier"]
+npm = ["@vue/language-server", "@vue/typescript-plugin", "vue-tsc", "typescript-language-server", "prettier", "serve"]
 paru = [
   "webkit2gtk-4.1",
   "base-devel",
