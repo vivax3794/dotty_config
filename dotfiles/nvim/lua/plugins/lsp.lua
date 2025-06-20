@@ -13,12 +13,21 @@ vim.api.nvim_create_autocmd(
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {desc = "View Error under cursor"})
 
 vim.diagnostic.config {
-    -- virtual_lines = true,
+    virtual_lines = false,
     virtual_text = true,
     update_in_insert = true,
-    severity_sort = true
+    severity_sort = true,
+    underline = false,
 }
 vim.lsp.inlay_hint.enable(true)
+
+vim.keymap.set("n", "<leader>E", function() 
+    config = vim.diagnostic.config()
+    vim.diagnostic.config {
+        virtual_lines = not config.virtual_lines,
+        virtual_text = not config.virtual_text,
+    }
+end)
 
 local rust_attach = function(_, bufnr)
     -- Hover actions
@@ -41,7 +50,6 @@ local rust_attach = function(_, bufnr)
     )
     vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer = bufnr})
 
-    vim.keymap.set("n", "<leader>E", ":RustLsp expandMacro<CR>", {silent = true, buffer = bufnr})
     vim.keymap.set("n", "<leader>md", ":RustLsp moveItem down", {silent = true, buffer = bufnr})
     vim.keymap.set("n", "<leader>mu", ":RustLsp moveItem up", {silent = true, buffer = bufnr})
 end
@@ -92,9 +100,6 @@ return {
                                 buildScripts = {
                                     rebuildOnSave = false
                                 },
-                                cfgs = {
-                                    "native_test"
-                                }
                             }
                         }
                     }

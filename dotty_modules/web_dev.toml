@@ -12,6 +12,7 @@ paru = [
   "appmenu-gtk-module",
   "libappindicator-gtk3",
   "librsvg",
+  "caddy",
 ]
 
 [managers.node]

@@ -91,9 +91,6 @@ return {
         opts = {
             picker = {
                 enable = true,
-                matcher = {
-                    cwd_bonus = true
-                }
             },
             scroll = {enable = true},
             scope = {enable = true},
@@ -120,8 +117,8 @@ return {
         },
         keys = {
             {"<leader><space>", function()
-                    Snacks.picker.smart()
-                end, desc = "Smart Find Files"},
+                    Snacks.picker.files()
+                end, desc = "Find files"},
             {
                 "<leader>b",
                 function()
@@ -154,6 +151,26 @@ return {
                 desc = "Disable Dim"
             }
         }
+    },
+    {
+    "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      event = "BufRead",
+      opts = {
+          keywords = {
+              CHANGE = {
+                  icon="󰃣",
+                  alt = {"REFACTOR", "CLEAN"}
+              },
+              MAYBE = {
+                  icon="?",
+                  alt = {"QUESTION", "UNSURE"}
+              }
+          }
+      },
+        keys = {
+            { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+        },
     }
 }
 
