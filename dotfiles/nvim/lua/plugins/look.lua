@@ -31,7 +31,7 @@ return {
             notify = {
                 enabled = true,
                 timeout = 500
-            }
+            },
         },
         dependencies = {
             "MunifTanjim/nui.nvim"

@@ -89,6 +89,11 @@ return {
         lazy = false,
         priority = 1000,
         opts = {
+            words = {},
+            input = {},
+            lazygit = {
+                configure = true,
+            },
             picker = {
                 enable = true,
             },
@@ -116,9 +121,18 @@ return {
             }
         },
         keys = {
+            {"fI", function()
+                    Snacks.words.jump()
+                end, desc = "Jump to next of this identifier"},
+            {"FI", function()
+                    Snacks.words.jump(-1)
+                end, desc = "jump to previous of this identifier"},
             {"<leader><space>", function()
                     Snacks.picker.files()
                 end, desc = "Find files"},
+            {"<leader>G", function()
+                    Snacks.lazygit()
+                end, desc = "open lazygit"},
             {
                 "<leader>b",
                 function()

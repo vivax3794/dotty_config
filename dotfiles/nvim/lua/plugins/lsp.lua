@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {desc = "View Error under cursor"})
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {desc = "Rename"})
 
 vim.diagnostic.config {
     virtual_lines = false,
@@ -48,7 +49,6 @@ local rust_attach = function(_, bufnr)
         end,
         {silent = true, buffer = bufnr}
     )
-    vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer = bufnr})
 
     vim.keymap.set("n", "<leader>md", ":RustLsp moveItem down", {silent = true, buffer = bufnr})
     vim.keymap.set("n", "<leader>mu", ":RustLsp moveItem up", {silent = true, buffer = bufnr})
