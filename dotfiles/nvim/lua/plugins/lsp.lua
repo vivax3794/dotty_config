@@ -50,8 +50,8 @@ local rust_attach = function(_, bufnr)
         {silent = true, buffer = bufnr}
     )
 
-    vim.keymap.set("n", "<leader>md", ":RustLsp moveItem down", {silent = true, buffer = bufnr})
-    vim.keymap.set("n", "<leader>mu", ":RustLsp moveItem up", {silent = true, buffer = bufnr})
+    vim.keymap.set("n", "<leader>md", ":RustLsp moveItem down<CR>", {silent = true, buffer = bufnr})
+    vim.keymap.set("n", "<leader>mu", ":RustLsp moveItem up<CR>", {silent = true, buffer = bufnr})
 end
 
 return {

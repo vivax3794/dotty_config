@@ -89,8 +89,6 @@ return {
         lazy = false,
         priority = 1000,
         opts = {
-            words = {},
-            input = {},
             lazygit = {
                 configure = true,
             },
@@ -172,18 +170,17 @@ return {
       event = "BufRead",
       opts = {
           keywords = {
-              CHANGE = {
-                  icon="󰃣",
-                  alt = {"REFACTOR", "CLEAN"}
+              REFACTOR = { icon="󰃣" },
+              MAYBE = { icon="?" },
+              INVARIANT = { icon = " ", color = "warning" },
+              SPEC = {
+                  icon=" ",
+                  color = "error",
               },
-              MAYBE = {
-                  icon="?",
-                  alt = {"QUESTION", "UNSURE"}
-              }
           }
       },
         keys = {
-            { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+            { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Comments" }
         },
     }
 }

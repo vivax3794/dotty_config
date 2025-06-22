@@ -2,8 +2,7 @@
     "height": 30,
     "spacing": 4,
     "modules-left": [
-        "niri/workspaces",
-        "niri/window"
+        "niri/workspaces"
     ],
     "modules-center": [
     ],

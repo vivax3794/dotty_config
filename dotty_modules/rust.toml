@@ -16,7 +16,8 @@ cargo = [
     "mdbook-callouts",
     "mdbookkit",
     "cargo-binstall", 
-    "cargo-update"
+    "cargo-update",
+    "cargo-edit"
 ]
 rust_component = ["rust-analyzer", "rustc-codegen-cranelift-preview"]
 rust_target = ["wasm32-unknown-unknown"]
@@ -48,13 +49,16 @@ c = "cargo"
 cn = "cargo new"
 cr = "cargo run"
 ct = "cargo nextest run"
-b = "bacon --job clippy-all --all-features --summary"
+b = "bacon --job clippy-all --all-features"
 j = "just"
 t = "watchexec typos"
 tw = "typos -w"
 
 [template.alias]
 just = "CARGO_MOMMYS_MOODS='chill/ominous/thirsty' CARGO_MOMMYS_ACTUAL=just cargo-mommy"
+
+[files]
+"~/.config/bacon/prefs.toml" = "./dotfiles/bacon.toml"
 
 [template]
 path_env = [

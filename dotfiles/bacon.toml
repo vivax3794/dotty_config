@@ -1,0 +1,8 @@
+summary = true
+wrap = false
+help_line = false
+default_job = "clippy-all"
+
+
+[keybindings]
+c = "job:clippy-all"
