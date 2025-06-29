@@ -40,8 +40,10 @@ priority = 16
 
 [hooks.once]
 set_rust_toolchain = {command="rustup default nightly", priority=15}
+install_dagger = "curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_COMMIT=head BIN_DIR=$HOME/.local/bin sh"
 
 [hooks.update]
+update_dagger = "curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_COMMIT=head BIN_DIR=$HOME/.local/bin sh"
 rust = {command="rustup update", priority=18}
 
 [template.abbr]

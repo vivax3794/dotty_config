@@ -25,3 +25,4 @@ cd = "z"
 
 [template]
 fish_commands = ['eval "$(zoxide init fish)"']
+path_env = ["$HOME/.local/bin"]

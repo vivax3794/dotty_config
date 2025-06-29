@@ -1,5 +1,5 @@
 [packages]
-paru = ["github-cli", "lazygit"]
+paru = ["github-cli", "lazygit", "jujutsu"]
 
 [hooks.once]
 git_name = "git config --global user.name vivax"
